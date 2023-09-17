@@ -23,7 +23,7 @@ document.querySelector('.loginButton').addEventListener('click', () => {
         fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${path}?ref=main`, {
             method: "PUT",
             headers: {
-                'Authorization': `token ${token}`,
+                authorization: `token ${token}`,
             },
             body: formData,
         }).then((response) => {
