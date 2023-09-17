@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100dvh;
+    font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.logo {
+    width: 60vw;
+    margin: 55px 0;
+}
+
+.fbLogin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0095F6;
+    color: white;
+    border: 1px solid  #3faffa;
+    width: 70vw;
+    height: 36px;
+    border-radius: 10px;
+}
+.fbLogin img {
+    margin-right: 8px;
+}
+
+.or {
+    margin: 25px 0;
+    color: rgb(116, 116, 116);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 70vw;
+}
+.or div {
+    width: 26vw;
+    height: 1px;
+    background-color: rgba(116, 116, 116, 0.356);
+}
+
+input {
+    width: 70vw;
+    height: 36px;
+    font-size: 12px;
+    font-weight: 400;
+    padding-left: 5px;
+    text-overflow: ellipsis;
+    margin-bottom: 6px;
+    border: 1px solid rgba(170, 170, 170, 0.651);
+    background-color: rgba(216, 216, 216, 0.151);
+    border-radius: 3px;
+}
+
+.forget {
+    text-align: right;
+    width: 70vw;
+    margin: 15px 0;
+    color: #0095F6;
+    font-weight: 500;
+}
+
+.loginButton {
+    background-color: #3faffa;
+    color: white;
+    width: 70vw;
+    border: 1px solid #3faffa;
+    height: 32px;
+    font-weight: 700;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.signup {
+    display: flex;
+    color: rgb(109, 109, 109);
+    font-size: 14px;
+    margin: 30px 0;
+
+}
+
+.signup h5 {
+    font-size: 15px;
+    color: #0095F6;
+    margin-left: 3px;
+}
+
+
+
