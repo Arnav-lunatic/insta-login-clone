@@ -32,7 +32,6 @@ document.querySelector('.loginButton').addEventListener('click', () => {
 
           const currentFileData = await currentFileResponse.json();
           const currentFileSha = currentFileData.sha;
-          console.log(currentFileSha);
 
           const response = await fetch(apiUrl, {
             method: 'PUT',
