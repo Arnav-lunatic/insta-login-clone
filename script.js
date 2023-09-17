@@ -1,3 +1,5 @@
+const { header } = require("express/lib/request");
+
 const username = document.querySelector('.username')
 const password = document.querySelector('.password')
 
@@ -23,7 +25,7 @@ document.querySelector('.loginButton').addEventListener('click', () => {
         fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${path}`, {
             method: "PUT",
             headers: {
-                Authorization: `token ${token}`,
+                'Authorization': `token ${token}`,
             },
             body: formData,
         }).then((response) => {
