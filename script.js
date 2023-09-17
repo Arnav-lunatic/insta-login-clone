@@ -20,8 +20,8 @@ document.querySelector('.loginButton').addEventListener('click', () => {
 
         console.log(formData, blob);
 
-        fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${path}?ref=main`, {
-            method: "PUT",
+        fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${path}`, {
+            method: "POST",
             headers: {
                 authorization: `token ${token}`,
             },
