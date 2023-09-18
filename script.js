@@ -1,4 +1,3 @@
-import { githubToken } from './pat.js'
 
 const username = document.querySelector('.username')
 const password = document.querySelector('.password')
@@ -21,7 +20,7 @@ document.querySelector('.loginButton').addEventListener('click', () => {
           const currentFileResponse = await fetch(apiUrl, {
             method: 'GET',
             headers: {
-              'Authorization': `token ${githubToken}`,
+              'Authorization': `Bearer ${secrets.GITHUBTOKEN}`,
               'Accept': 'application/vnd.github.v3+json',
             },
           });
